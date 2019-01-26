@@ -11,7 +11,7 @@
   <li>ドラッグで移動。スクロールで拡大、縮小</li>
   <li>force_directed_graphとvisTakefujiの中のPythonコードはデータ取得用。いつでも更新できる。</li>
   <li>d3jsをGithub Pagesで動かすやり方が知りたかった</li>
-  <li><a href="https://scrapbox.io/sfc-vis2018/13._P5.jsとD3.js", target="_blank">Scrapboxから実行するやつ</a>で、HTMLファイルも扱えるとそっち経由で動かせた可能性があった（欲しい）</li>
+  <li><a href="https://scrapbox.io/sfc-vis2018/13._P5.jsとD3.js" target="_blank">Scrapboxから実行するやつ</a>で、HTMLファイルも扱えるとそっち経由で動かせた可能性があった（欲しい）</li>
 </ul>
 
 <ul>
