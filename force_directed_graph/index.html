@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- codes based on: 
+  https://bl.ocks.org/heybignick/3faf257bbbbc7743bb72310d03b86ee8
+  https://bl.ocks.org/ngminhtrung/7c5721a1504f3e29a36da9ddd9e5039b 
+  https://bl.ocks.org/puzzler10/2ce53e7592ef80e164821f26d426f723
+  http://bl.ocks.org/dustinlarimer/5888271
+-->
+<!-- data  -->
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <style>
+
+    .links line {
+      stroke: #999;
+      stroke-opacity: 0.3;
+    }
+
+    .nodes circle {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+
+    text {
+      font-family: sans-serif;
+      font-size: 10px;
+    }
+
+    .selected {
+      fill: tomato;
+    }
+
+    .linkSelected {
+      stroke: tomato;
+    }
+   
+    .conected {
+      fill: orange;
+    }
+
+    </style>
+  </head>
+  <body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+
+    var margin = {top: -5, right: -5, bottom: -5, left: -5},
+        width = 1200 - margin.left - margin.right,
+        height = 650 - margin.top - margin.bottom;
+
+    var zoom = d3.zoom()
+        .scaleExtent([1/6, 4])
+        .on("zoom", zoomed);
+
+    var drag = d3.drag()
+        .subject(function (d) { return d; })
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")    
+        .attr("transform", "translate(" + margin.left + "," + margin.right + ")")
+        .call(zoom);
+
+    var defs = svg.append('svg:defs')
+
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var rect = svg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .style("fill", "none")
+        .style("pointer-events", "all");
+
+    var zoomLayer = svg.append("g")
+        .attr('id', 'markers')
+        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    var simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().id(function(d) { return d.id; }))
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(width / 2, height / 2));
+
+    var defs = svg.append('svg:defs')
+
+    d3.json("courses2.json", function(error, graph) {
+      if (error) throw error;
+
+      var link = zoomLayer.append("g")
+          .attr("class", "links")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line")
+          .attr("stroke-width", 2)
+          .style("stroke", linkColor);
+          link.attr('d', function(d,i){ return 'M 0,' + (i * 100) + ' L ' + (width - margin.right) + ',' + (i * 100) + '' });
+          link.attr("marker-end", returnMarker);
+
+      var node = zoomLayer.append("g")
+          .attr("class", "nodes")
+        .selectAll("g")
+        .data(graph.nodes)
+        .enter().append("g");
+        
+      var circles = node.append("circle")
+          .attr("r", 5)
+          .attr("fill", function(d) { return color(d.group); })
+          .call(drag);
+
+      var lables = node.append("text")
+          .text(function(d) {
+            return d.name;
+          })
+          .attr('x', 6)
+          .attr('y', 3);
+
+      node.append("title")
+          .text(function(d) { return d.name; });
+
+      simulation
+          .nodes(graph.nodes)
+          .on("tick", ticked);
+
+      simulation.force("link")
+          .links(graph.links);
+
+      function ticked() {
+        link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node
+            .attr("transform", function(d) {
+              return "translate(" + d.x + "," + d.y + ")";
+            })
+      }
+
+      var marker = defs.selectAll('marker')
+        .data(graph.links)
+        .enter()
+        .append('svg:marker')
+          .attr('id', returnId)
+          .attr('markerHeight', returnHeightOrWidth)
+          .attr('markerWidth', returnHeightOrWidth)
+          .attr('markerUnits', 'strokeWidth')
+          .attr('orient', 'auto')
+          .attr('refX', 10)
+          .attr('refY', 0)
+          .attr('viewBox', returnViewBox)
+          .append('svg:path')
+            .attr('d', returnPath)
+            .attr('fill', returnColor);
+
+    });
+
+    function returnId(d){
+      if(d.right == "false"){
+          return 'marker_square';
+      } else {
+        return 'marker_arrow';
+      }
+    }
+    function returnViewBox(d){
+      if(d.right == "false"){
+          return "-5 -5 10 10";
+      } else {
+        return "-5 -5 10 10";
+      }
+    }
+    function returnPath(d){
+      if(d.right == "false"){
+          return "M 0,0 m -5,-5 L 5,-5 L 5,5 L -5,5 Z";
+      } else {
+        return "M 0,0 m -5,-5 L 5,0 L -5,5 Z";
+      }
+    }
+    function returnColor(d,i){
+      if(d.right == "false"){
+          return "blue";
+      } else {
+        return "red";
+      }
+    }
+    function returnMarker(d,i){
+      if(d.right == "false"){
+          return "url(#marker_square)";
+      } else {
+        return "url(#marker_arrow)";
+      }
+    }
+    function returnHeightOrWidth(d){
+      if(d.right == "false"){
+          return 0;
+      } else {
+        return 5;
+      }
+    }
+
+    function linkColor(d){
+      if(d.right == "false"){
+          return "blue";
+      } else {
+        return "red";
+      }
+    }
+
+    function zoomed() {
+        const currentTransform = d3.event.transform;
+        zoomLayer.attr("transform", currentTransform);
+    }
+
+    function dragstarted(d) {
+        d3.event.sourceEvent.stopPropagation();
+        d3.select(this).classed("dragging", true);
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+        d3.select(this).classed("dragging", false);
+    }
+
+    </script>
+  </body>
+</html>
