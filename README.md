@@ -28,7 +28,7 @@
 </ul>
 
 
-<h3>サムネいる</h3>
+<h3>巨人のサムネいる</h3>
 <ul>
   <li><a href="https://gonishimura.github.io/runDndTree/?p=sfc-vis2018-t16654gn/report1&c=dndTree.js&s=dndTree.css" target="_blank">drag_zoom_tree</a></li>
   <img src="https://github.com/GoNishimura/images/blob/master/books.png">
