@@ -4,10 +4,17 @@
   <li><a href="https://scrapbox.io/sfc-vis2018-t16654gn/report1" target="_blank">やり方についてはこれと下のリンクを参考にせよ（手前味噌）</a></li>
 </ul>
 
+<h3>実際に実行しているScrapbox上のコード等はこちらから</h3>
+<ul>
+  <li>（GitHubに上げているやつとの違いとして、HTMLファイル一個の中に仕舞われていたjsファイルとcssファイルをわざわざ分割して置いていること。要チェック！）</li>
+  <li>https://scrapbox.io/sfc-vis2018-t16654gn/report1</li>
+  <li>https://scrapbox.io/sfc-vis2018-t16654gn/report2</li>
+</ul>
+
 <h3>実行するためのGitHub Pagesはこんな感じ</h3>
 <ul>
-  <li><a href="https://github.com/GoNishimura/runDndTree" target="_blank">https://github.com/GoNishimura/runDndTree</a></li>
-  <li><a href="https://github.com/GoNishimura/runForceDirectedGraph" target="_blank">https://github.com/GoNishimura/runForceDirectedGraph</a></li>
+  <li>https://github.com/GoNishimura/runDndTree</li>
+  <li>https://github.com/GoNishimura/runForceDirectedGraph</li>
 </ul>
 
 
@@ -15,7 +22,7 @@
 <ul>
   <li><a href="https://gonishimura.github.io/runDndTree/?p=sfc-vis2018-t16654gn/report1&c=dndTree.js&s=dndTree.css" target="_blank">drag_zoom_tree</a>はSFCのメディアセンターの蔵書の分類を可視化したもの。</li>
   <li><a href="https://gonishimura.github.io/runForceDirectedGraph/?p=sfc-vis2018-t16654gn/report2&c=fdg.js&s=fdg.css" target="_blank">force_directed_graph</a>は、SFCの１４学則の科目間の関連科目（青色）、推奨および必須科目（赤色、矢印あり）を可視化したもの（ただし今学期開講したものに限る上、０７学則とその名前の一致等はやらせていないため、一部分しか可視化できていないことになる）</li>
-  <li>visTakefujiは、<a href="http://web.sfc.keio.ac.jp/~takefuji/list.html">http://web.sfc.keio.ac.jp/~takefuji/list.html</a>におけるプログラムの更新を可視化したもの。</li>
+  <li>visTakefujiは、http://web.sfc.keio.ac.jp/~takefuji/list.html におけるプログラムの更新を可視化したもの。</li>
 </ul>
 
 
