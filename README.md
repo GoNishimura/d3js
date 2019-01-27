@@ -14,6 +14,7 @@
   <li><a href="https://gonishimura.github.io/runDndTree/?p=sfc-vis2018-t16654gn/report1&c=dndTree.js&s=dndTree.css" target="_blank">drag_zoom_tree</a>と<a href="https://gonishimura.github.io/runForceDirectedGraph/?p=sfc-vis2018-t16654gn/report2&c=fdg.js&s=fdg.css" target="_blank">force_directed_graph</a>はインタラクティブ。</li>
   <li>ドラッグで移動。スクロールで拡大、縮小</li>
   <li><a href="https://gonishimura.github.io/runForceDirectedGraph/?p=sfc-vis2018-t16654gn/report2&c=fdg.js&s=fdg.css" target="_blank">force_directed_graph</a>とvisTakefujiの中のPythonコードはデータ取得用。いつでも更新できる。</li>
+  <li>今回はコピペばっかりだったが、いつかちゃんとD3jsを１から勉強したい。</li>
 </ul>
 
 <ul>
