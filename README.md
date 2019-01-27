@@ -1,7 +1,7 @@
 # d3js
 <ul>
   <li><a href="https://github.com/masui/rund3" target="_blank">D3jsをGitHub Pages上で動かせるようにしてくれたmasuiさんを讃えよ</a></li>
-  <li><a href="https://scrapbox.io/sfc-vis2018-t16654gn/report1" target="_blank">やり方についてはこれを参考にせよ（手前味噌）</a></li>
+  <li><a href="https://scrapbox.io/sfc-vis2018-t16654gn/report1" target="_blank">やり方についてはこれと下のリンクを参考にせよ（手前味噌）</a></li>
 </ul>
 
 <h3>実行するためのGitHub Pagesはこんな感じ</h3>
