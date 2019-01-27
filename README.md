@@ -6,7 +6,7 @@
 
 <h3>実際に実行しているScrapbox上のコード等はこちらから</h3>
 <ul>
-  <li>（GitHubに上げているやつとの違いとして、HTMLファイル一個の中に仕舞われていたjsファイルとcssファイルをわざわざ分割して置いていること。要チェック！）</li>
+  <li>（GitHubに上げているやつとの違いとして、HTMLファイル一個の中に仕舞われていたjsファイルとcssファイルをわざわざ分割して置いている。要チェック！）</li>
   <li>https://scrapbox.io/sfc-vis2018-t16654gn/report1</li>
   <li>https://scrapbox.io/sfc-vis2018-t16654gn/report2</li>
 </ul>
