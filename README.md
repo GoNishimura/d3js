@@ -23,7 +23,7 @@
 <h3>説明とか</h3>
 <ul>
   <li><a href="https://gonishimura.github.io/runDndTree/?p=sfc-vis2018-t16654gn/report1&c=dndTree.js&s=dndTree.css" target="_blank">drag_zoom_tree</a>はSFCのメディアセンターの蔵書の分類を可視化したもの。</li>
-  <li><a href="https://gonishimura.github.io/runForceDirectedGraph/?p=sfc-vis2018-t16654gn/report2&c=fdg.js&s=fdg.css" target="_blank">force_directed_graph</a>は、SFCの１４学則の科目間の関連科目（青色）、推奨および必須科目（赤色、矢印あり）を可視化したもの（ただし今学期開講したものに限る上、０７学則とその名前の一致等はやらせていないため、一部分しか可視化できていないことになる）</li>
+  <li><a href="https://gonishimura.github.io/runForceDirectedGraph/?p=sfc-vis2018-t16654gn/report2&c=fdg.js&s=fdg.css" target="_blank">force_directed_graph</a>は、SFCの１４学則の科目間の関連科目（青色）、推奨および必須科目（赤色、矢印あり）を可視化したもの（ただし今学期開講したものに限るため、一部分しか可視化できていないことになる）</li>
   <li><a href="https://gonishimura.github.io/runDndTree/?p=sfc-vis2018-t16654gn/report3&c=take.js&s=take.css" target="_blank">visTakefuji</a>は、http://web.sfc.keio.ac.jp/~takefuji/list.html におけるプログラムの更新を可視化したもの。</li>
 </ul>
 
