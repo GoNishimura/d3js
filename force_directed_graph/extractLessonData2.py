@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import re
 
-year = 2018
+year = 2019
 urls = [
     "http://vu.sfc.keio.ac.jp/course_u/data/{}/csec14_5.html".format(year),
     "http://vu.sfc.keio.ac.jp/course_u/data/{}/csec14_8.html".format(year),
